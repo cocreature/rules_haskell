@@ -20,6 +20,8 @@ mkShell {
     git
     # Needed to get correct locale for tests with encoding
     glibcLocales
+    # Needed for debug/linking_utils
+    binutils
   ] ++ lib.optionals docTools [graphviz python36Packages.sphinx zip unzip];
 
   shellHook = ''
