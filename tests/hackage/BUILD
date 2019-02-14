@@ -14,7 +14,7 @@ load(
 )
 
 [
-    haskell_import(name = name)
+    haskell_import(name = name, deps = ["@gmp"] )
     for name in [
         "array",
         "base",

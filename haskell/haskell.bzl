@@ -230,6 +230,7 @@ for `haskell_binary`.
 haskell_import = rule(
     _haskell_import_impl,
     attrs = dict(
+        _haskell_common_attrs,
         package = attr.string(doc = "A non-Bazel-supplied GHC package name.  Defaults to the name of the rule."),
     ),
     toolchains = [
