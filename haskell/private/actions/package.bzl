@@ -95,8 +95,8 @@ def package(
         "import-dirs": " ".join([import_dir, import_dir_prof]),
         "library-dirs": " ".join(["${pkgroot}"] + extra_lib_dirs),
         "dynamic-library-dirs": " ".join(["${pkgroot}"] + extra_lib_dirs),
-        "hs-libraries": pkg_id.library_name(hs, my_pkg_id),
-        "extra-libraries": " ".join(extra_libs),
+        # "hs-libraries": pkg_id.library_name(hs, my_pkg_id),
+        "extra-libraries": " ".join(extra_libs + [pkg_id.library_name(hs, my_pkg_id)]),
         "depends": ", ".join(
             # Prebuilt dependencies are added further down, since their
             # package-ids are not available as strings but in build outputs.
@@ -135,7 +135,7 @@ def package(
         outputs = [conf_file],
         command = """
             cat $1 > $4
-            echo "exposed-modules: `cat $2`" >> $4
+            echo "exposed-modules: Lib" >> $4
 
             # this is equivalent to 'readarray'. We do use 'readarray' in order to
             # support older bash versions.

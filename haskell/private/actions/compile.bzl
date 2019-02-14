@@ -206,7 +206,7 @@ def _compilation_defaults(hs, cc, java, dep_info, srcs, import_dir_map, extra_sr
     if hs.mode == "opt":
         args.add("-O2")
 
-    args.add("-static")
+    args.add("-dynamic")
     if with_profiling:
         args.add("-prof", "-fexternal-interpreter")
 
@@ -230,6 +230,7 @@ def _compilation_defaults(hs, cc, java, dep_info, srcs, import_dir_map, extra_sr
     # Interface files with profiling have to have the extension "p_hi":
     # https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/packages.html#installedpackageinfo-a-package-specification
     # otherwise we won't be able to register them with ghc-pkg.
+    args.add_all(["-hisuf", "dyn_hi"])
     if with_profiling:
         args.add_all([
             "-hisuf",

@@ -10,6 +10,7 @@ haskell_library(
     name = "lib",
     srcs = glob(["src/*.hs"]),
     src_strip_prefix = "src",
+    linkstatic = True,
     deps = [
         "//tests/hackage:template-haskell",
     ],
