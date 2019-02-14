@@ -224,6 +224,7 @@ HaskellPrebuiltPackageInfo = provider(
         "package": "Package name",
         "id_file": "File containing package id",
         "cc_dependencies": "Direct cc library dependencies. See HaskellCcInfo.",
+        "transitive_cc_dependencies": "Transitive cc library dependencies. See HaskellCcInfo.",
     },
 )
 

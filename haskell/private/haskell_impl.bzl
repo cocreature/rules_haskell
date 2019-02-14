@@ -435,6 +435,7 @@ def haskell_import_impl(ctx):
         package = package,
         id_file = id_file,
         cc_dependencies = dep_info.cc_dependencies,
+        transitive_cc_dependencies = dep_info.transitive_cc_dependencies,
     )
 
     return prebuilt_package_info
