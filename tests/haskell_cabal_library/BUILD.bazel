@@ -18,7 +18,9 @@ haskell_cabal_library(
     name = "lib",
     srcs = [
         "Lib.hs",
+        "PathsWrapper.hs",
         "lib.cabal",
+        "foobar",
     ],
     flags = [
         "use-base",

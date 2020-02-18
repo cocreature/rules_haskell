@@ -2,6 +2,7 @@ cabal-version: >=1.10
 name: lib
 version: 0.1.0.0
 build-type: Simple
+data-files: foobar
 
 -- Example flags to test the Cabal flags attribute.
 flag use-base
@@ -22,3 +23,6 @@ library
     exposed-modules: Lib
   else
     other-modules: Lib
+  exposed-modules: PathsWrapper
+  other-modules: Paths_lib
+  build-depends: filepath
